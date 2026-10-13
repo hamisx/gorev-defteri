@@ -12,16 +12,16 @@ interface Props {
 export default function TodoList({ todos, emptyMessage, ...handlers }: Props) {
   if (todos.length === 0) {
     return (
-      <p className="rounded-2xl border border-dashed border-gray-300 p-8 text-center text-gray-500">
-        {emptyMessage}
+      <p className="rounded-2xl border-2 border-dashed border-violet-300 bg-white/60 p-8 text-center font-medium text-violet-500">
+        📝 {emptyMessage}
       </p>
     );
   }
 
   return (
     <ul className="space-y-3">
-      {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} {...handlers} />
+      {todos.map((todo, i) => (
+        <TodoItem key={todo.id} todo={todo} index={i} {...handlers} />
       ))}
     </ul>
   );

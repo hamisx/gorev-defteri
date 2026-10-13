@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-paper text-ink antialiased;
+  @apply min-h-screen bg-gradient-to-br from-violet-100 via-pink-50 to-amber-100 text-slate-800 antialiased;
   font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background-attachment: fixed;
 }

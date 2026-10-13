@@ -6,10 +6,10 @@ interface Props {
   counts: Record<Filter, number>;
 }
 
-const options: { value: Filter; label: string }[] = [
-  { value: "all", label: "Tümü" },
-  { value: "active", label: "Devam eden" },
-  { value: "completed", label: "Tamamlanan" },
+const options: { value: Filter; label: string; active: string }[] = [
+  { value: "all", label: "Tümü", active: "from-violet-600 to-fuchsia-500" },
+  { value: "active", label: "Devam eden", active: "from-orange-500 to-amber-400" },
+  { value: "completed", label: "Tamamlanan", active: "from-emerald-500 to-teal-400" },
 ];
 
 export default function FilterBar({ filter, onChange, counts }: Props) {
@@ -20,10 +20,10 @@ export default function FilterBar({ filter, onChange, counts }: Props) {
           key={o.value}
           onClick={() => onChange(o.value)}
           aria-pressed={filter === o.value}
-          className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
+          className={`rounded-full px-4 py-1.5 text-sm font-semibold transition ${
             filter === o.value
-              ? "bg-brand text-white"
-              : "bg-white text-gray-700 ring-1 ring-black/10 hover:bg-gray-50"
+              ? `bg-gradient-to-r ${o.active} text-white shadow-md`
+              : "bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-violet-50"
           }`}
         >
           {o.label} ({counts[o.value]})
