@@ -29,4 +29,5 @@ npm run dev
 ```
 
 ## Yayın
-Netlify üzerinden yayına alınmıştır. Build komutu: `npm run build`, yayın klasörü: `dist`.
+Netlify üzerinden yayına alınmıştır: https://gorev-defteri.netlify.app/
+Build komutu: `npm run build`, yayın klasörü: `dist`.
